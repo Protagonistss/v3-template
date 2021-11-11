@@ -4,7 +4,7 @@
 </script>
 
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
+  <figure class="md:flex bg-gray-100 rounded-xl p-8 md:p-0">123</figure>
   <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
 </template>
 
