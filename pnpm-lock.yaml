@@ -2,6 +2,7 @@ lockfileVersion: 5.3
 
 specifiers:
   '@types/node': ^16.11.7
+  '@types/nprogress': ^0.2.0
   '@vitejs/plugin-vue': ^1.9.3
   autoprefixer: ^10.4.0
   less: ^4.1.2
@@ -13,14 +14,17 @@ specifiers:
   unplugin-vue-components: ^0.17.2
   vite: ^2.6.4
   vue: ^3.2.16
+  vue-router: '4'
   vue-tsc: ^0.3.0
 
 dependencies:
   nprogress: 0.2.0
   vue: 3.2.21
+  vue-router: 4.0.12_vue@3.2.21
 
 devDependencies:
   '@types/node': 16.11.7
+  '@types/nprogress': 0.2.0
   '@vitejs/plugin-vue': 1.9.4_vite@2.6.14
   autoprefixer: 10.4.0_postcss@8.3.11
   less: 4.1.2
@@ -121,6 +125,10 @@ packages:
 
   /@types/node/16.11.7:
     resolution: {integrity: sha1-NoIJRQYTJpeMQqAeVrYc0iPf3EI=}
+    dev: true
+
+  /@types/nprogress/0.2.0:
+    resolution: {integrity: sha1-hsWTaC1BmSEqBQnMPE1WK7vW5F8=}
     dev: true
 
   /@types/parse-json/4.0.0:
@@ -226,7 +234,6 @@ packages:
 
   /@vue/devtools-api/6.0.0-beta.20.1:
     resolution: {integrity: sha1-W0mWR+kpw1uvKmajmVePmqRgEUI=}
-    dev: true
 
   /@vue/reactivity/3.2.21:
     resolution: {integrity: sha1-BzrRRBku14oH4VHpWjuqUV5AmaI=}
@@ -1964,6 +1971,15 @@ packages:
     dependencies:
       vue: 3.2.21
     dev: true
+
+  /vue-router/4.0.12_vue@3.2.21:
+    resolution: {integrity: sha1-jceSzd9bsavMOQj5BkE23n4TxGA=}
+    peerDependencies:
+      vue: ^3.0.0
+    dependencies:
+      '@vue/devtools-api': 6.0.0-beta.20.1
+      vue: 3.2.21
+    dev: false
 
   /vue-tsc/0.3.0_typescript@4.4.4:
     resolution: {integrity: sha1-Ozhyv08dLkQJtXrb2CYDLiU9tAY=}

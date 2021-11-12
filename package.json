@@ -8,10 +8,12 @@
   },
   "dependencies": {
     "nprogress": "^0.2.0",
-    "vue": "^3.2.16"
+    "vue": "^3.2.16",
+    "vue-router": "4"
   },
   "devDependencies": {
     "@types/node": "^16.11.7",
+    "@types/nprogress": "^0.2.0",
     "@vitejs/plugin-vue": "^1.9.3",
     "autoprefixer": "^10.4.0",
     "less": "^4.1.2",
