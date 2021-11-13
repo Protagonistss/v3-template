@@ -9,11 +9,13 @@
   "dependencies": {
     "nprogress": "^0.2.0",
     "vue": "^3.2.16",
-    "vue-router": "4"
+    "vue-router": "4",
+    "vuedraggable": "^4.1.0"
   },
   "devDependencies": {
     "@types/node": "^16.11.7",
     "@types/nprogress": "^0.2.0",
+    "@types/sortablejs": "^1.10.7",
     "@vitejs/plugin-vue": "^1.9.3",
     "autoprefixer": "^10.4.0",
     "less": "^4.1.2",
@@ -23,6 +25,7 @@
     "typescript": "^4.4.3",
     "unplugin-vue-components": "^0.17.2",
     "vite": "^2.6.4",
+    "vue-draggable-next": "^2.1.1",
     "vue-tsc": "^0.3.0"
   }
 }

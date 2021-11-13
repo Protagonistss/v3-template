@@ -5,7 +5,9 @@ import HelloWorld from "@/components/HelloWorld.vue"
 
 
 const routes = [
-  { path: '/', component: HelloWorld }
+  { path: '/', component: HelloWorld },
+  { path: '/design', component: () => import("@/views/Design.vue") },
+  { path: '/nest', component: () => import("@/views/HomePage.vue") }
 ]
 
 const router = createRouter({
