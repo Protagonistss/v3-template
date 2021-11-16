@@ -7,6 +7,7 @@ specifiers:
   '@vitejs/plugin-vue': ^1.9.3
   ant-design-vue: ^2.2.8
   autoprefixer: ^10.4.0
+  axios: ^0.24.0
   less: ^4.1.2
   nprogress: ^0.2.0
   pinia: ^2.0.3
@@ -34,6 +35,7 @@ devDependencies:
   '@vitejs/plugin-vue': 1.9.4_vite@2.6.14
   ant-design-vue: 2.2.8_vue@3.2.21
   autoprefixer: 10.4.0_postcss@8.3.11
+  axios: 0.24.0
   less: 4.1.2
   pinia: 2.0.3_typescript@4.4.4+vue@3.2.21
   postcss: 8.3.11
@@ -435,6 +437,14 @@ packages:
       picocolors: 1.0.0
       postcss: 8.3.11
       postcss-value-parser: 4.1.0
+    dev: true
+
+  /axios/0.24.0:
+    resolution: {integrity: sha1-gE5voeS5xSiFAd2d/1anoJQNINY=}
+    dependencies:
+      follow-redirects: 1.14.5
+    transitivePeerDependencies:
+      - debug
     dev: true
 
   /babel-walk/3.0.0-canary-5:
@@ -949,6 +959,16 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       to-regex-range: 5.0.1
+    dev: true
+
+  /follow-redirects/1.14.5:
+    resolution: {integrity: sha1-8JpYSJgdPHcrU5Iwl3hSP42Fw4E=}
+    engines: {node: '>=4.0'}
+    peerDependencies:
+      debug: '*'
+    peerDependenciesMeta:
+      debug:
+        optional: true
     dev: true
 
   /fraction.js/4.1.1:

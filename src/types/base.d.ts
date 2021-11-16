@@ -1,1 +1,3 @@
-// * base for extend
+export interface IFlatMap {
+  [key: string]: string | number
+}
