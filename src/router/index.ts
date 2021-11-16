@@ -1,13 +1,14 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import nprogress from "nprogress"
 import "nprogress/nprogress.css"
-import HelloWorld from "@/components/HelloWorld.vue"
+import Index from "@/views/index/Index.vue"
 
 
 const routes = [
-  { path: '/', component: HelloWorld },
+  { path: '/', component: Index },
+  { path: '/login', component: () => import("@/views/login/Login.vue") },
   { path: '/design', component: () => import("@/views/Design.vue") },
-  { path: '/nest', component: () => import("@/views/HomePage.vue") }
+  { path: '/explore', component: () => import("@/views/explore/Explore.vue") }
 ]
 
 const router = createRouter({

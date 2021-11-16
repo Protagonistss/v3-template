@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+import { useLoginStore } from "./login"
 
 const rootStore = defineStore('root', {
   state: () => ({
@@ -13,5 +14,6 @@ const rootStore = defineStore('root', {
 })
 
 export {
-  rootStore
+  rootStore,
+  useLoginStore
 }
