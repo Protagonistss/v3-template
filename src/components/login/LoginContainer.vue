@@ -186,5 +186,3 @@ const onLogin = (event: Event) => {
   emit('onLogin', { username: username.value, password: password.value })
 }
 </script>
-
-<style scoped></style>
