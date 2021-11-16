@@ -5,7 +5,7 @@
 <script setup lang="ts">
 import { reactive } from "vue"
 // import Nest from "./Nest.vue"
-import nestedDraggable from "@/components/NestCmp.vue"
+// import nestedDraggable from "@/components/NestCmp.vue"
 
 
 const list = reactive([

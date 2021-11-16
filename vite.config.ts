@@ -7,7 +7,14 @@ import { resolve } from 'path'
 // https://vitejs.dev/config/
 export default defineConfig({
   build: {
-    sourcemap: true
+    sourcemap: true,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'ant-design-vue': ['ant-design-vue']
+        }
+      }
+    }
   },
   plugins: [
     vue(),
