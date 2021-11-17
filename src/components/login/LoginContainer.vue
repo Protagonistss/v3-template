@@ -36,9 +36,12 @@
             <label for="email-address" class="sr-only">Email address</label>
             <input
               id="email-address"
+              ref="emailRef"
               name="email"
               type="email"
+              v-model="username"
               autocomplete="email"
+              required
               class="
                 appearance-none
                 rounded-none
@@ -63,9 +66,11 @@
           <div>
             <label for="password" class="sr-only">Password</label>
             <input
-              id="password"
+              ref="passwordRef"
               name="password"
               type="password"
+              v-model="password"
+              required
               autocomplete="current-password"
               class="
                 appearance-none
@@ -160,7 +165,7 @@
 
 <script setup lang="ts">
 import { LockClosedIcon } from '@heroicons/vue/solid'
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 
 interface ISubmitContent {
   username: string;
@@ -173,9 +178,15 @@ const emit =
 const username = ref("");
 const password = ref("");
 const emailRef = ref(null);
+const passwordRef = ref(null);
+
 
 const onLogin = (event: Event) => {
-  console.log("-----");
-  emit("onLogin", { username: username.value, password: password.value });
+  const isValidity = (emailRef.value as any).checkValidity() 
+    && (passwordRef.value as any).checkValidity()
+  if (isValidity) {
+    event.preventDefault()
+    emit("onLogin", { username: username.value, password: password.value });
+  }
 };
 </script>
