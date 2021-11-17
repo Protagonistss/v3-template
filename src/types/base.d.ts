@@ -1,3 +1,3 @@
 export interface IFlatMap {
-  [key: string]: string | number
+  [key: string]: unknown
 }

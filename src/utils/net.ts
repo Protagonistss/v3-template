@@ -93,4 +93,13 @@ const _download = (uri: string, params: IFlatMap, config: AxiosRequestConfig) =>
     .catch(error => error.response)
 }
 
-export { _get, _post, _delete, _put, _patch, _download, prefix, joinQueryStringToUri }
+export {
+  _get,
+  _post,
+  _delete,
+  _put,
+  _patch,
+  _download,
+  prefix,
+  joinQueryStringToUri
+}
