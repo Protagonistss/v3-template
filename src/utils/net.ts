@@ -1,5 +1,5 @@
-import Axios, { AxiosRequestConfig } from 'axios'
-import { IFlatMap } from "@/types"
+import Axios from 'axios'
+import { IFlatMap, IAxiosRequestConfig } from "@/types"
 
 
 const prefix = '/api'
@@ -43,7 +43,7 @@ const parseQueryString = (querys: IFlatMap): string => {
   return res
 }
 
-const _get = (uri: string, querys: IFlatMap, config: AxiosRequestConfig) => {
+const _get = (uri: string, querys: IFlatMap, config: IAxiosRequestConfig) => {
   return axios
     .get(joinQueryStringToUri(uri, querys), config)
     .then(res => res.data)
@@ -53,7 +53,7 @@ const _get = (uri: string, querys: IFlatMap, config: AxiosRequestConfig) => {
 const _post = (
   uri: string,
   payloads: IFlatMap,
-  config: AxiosRequestConfig,
+  config: IAxiosRequestConfig,
 ) => {
   return axios
     .post(uri, payloads, config)
@@ -61,14 +61,14 @@ const _post = (
     .catch(error => Promise.reject(error.response))
 }
 
-const _delete = (uri: string, params: IFlatMap, config: AxiosRequestConfig) => {
+const _delete = (uri: string, params: IFlatMap, config: IAxiosRequestConfig) => {
   return axios
     .delete(joinQueryStringToUri(uri, params), config)
     .then(res => res.data)
     .catch(error => Promise.reject(error.response))
 }
 
-const _put = (uri: string, payloads: IFlatMap, config: AxiosRequestConfig) => {
+const _put = (uri: string, payloads: IFlatMap, config: IAxiosRequestConfig) => {
   return axios
     .put(uri, payloads, config)
     .then(res => res.data)
@@ -78,7 +78,7 @@ const _put = (uri: string, payloads: IFlatMap, config: AxiosRequestConfig) => {
 const _patch = (
   uri: string,
   payloads: IFlatMap,
-  config: AxiosRequestConfig
+  config: IAxiosRequestConfig
 ) => {
   return axios
     .patch(uri, payloads, config)
@@ -86,7 +86,7 @@ const _patch = (
     .catch(error => error.response)
 }
 
-const _download = (uri: string, params: IFlatMap, config: AxiosRequestConfig) => {
+const _download = (uri: string, params: IFlatMap, config: IAxiosRequestConfig) => {
   return axios
     .get(joinQueryStringToUri(uri, params), config)
     .then(res => res)
