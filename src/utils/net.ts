@@ -10,6 +10,10 @@ const axios = Axios.create({
 
 axios.interceptors.request.use(
   onFulfilled => {
+    const token = localStorage.getItem('token')
+    if (token) {
+      onFulfilled.headers = { ...onFulfilled.headers, token: token }
+    }
     return onFulfilled
   },
   onRejected => {
@@ -19,6 +23,7 @@ axios.interceptors.request.use(
 
 axios.interceptors.response.use(
   onFulfilled => {
+    //todo 401 logout and clean token
     return onFulfilled
   },
   onRejected => {
@@ -52,7 +57,7 @@ const _get = (uri: string, querys: IFlatMap, config: IAxiosRequestConfig) => {
 
 const _post = (
   uri: string,
-  payloads: IFlatMap,
+  payloads: unknown,
   config: IAxiosRequestConfig,
 ) => {
   return axios
@@ -77,7 +82,7 @@ const _put = (uri: string, payloads: IFlatMap, config: IAxiosRequestConfig) => {
 
 const _patch = (
   uri: string,
-  payloads: IFlatMap,
+  payloads: unknown,
   config: IAxiosRequestConfig
 ) => {
   return axios

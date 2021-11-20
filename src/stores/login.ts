@@ -1,4 +1,6 @@
-import { defineStore, acceptHMRUpdate } from "pinia"
+import { defineStore, acceptHMRUpdate } from 'pinia'
+import { userLogin } from '@/apis'
+import { IResponse } from '@/types';
 
 const useLoginStore = defineStore("login", {
   state: () => ({
@@ -6,7 +8,13 @@ const useLoginStore = defineStore("login", {
       username: '',
       password: ''
     }
-  })
+  }),
+  actions: {
+    async userLogin () {
+      const data:IResponse = await userLogin(this.loginContent)
+      return data
+    }
+  }
 })
 
 if (import.meta.hot) {

@@ -5,7 +5,7 @@ import Index from "@/views/index/Index.vue"
 
 
 const routes = [
-  { path: '/', component: Index },
+  { path: '/', name: 'home', component: Index },
   { path: '/login', component: () => import("@/views/login/Login.vue") },
   { path: '/design', component: () => import("@/views/design/Design.vue") },
   { path: '/explore', component: () => import("@/views/explore/Explore.vue") }
