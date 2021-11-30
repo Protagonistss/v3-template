@@ -48,46 +48,46 @@ const parseQueryString = (querys: IFlatMap): string => {
   return res
 }
 
-const _get = (uri: string, querys: IFlatMap, config: IAxiosRequestConfig) => {
+const _get = <T>(uri: string, querys: IFlatMap, config: IAxiosRequestConfig) => {
   return axios
     .get(joinQueryStringToUri(uri, querys), config)
-    .then(res => res.data)
+    .then<T>(res => res.data)
     .catch(error => Promise.reject(error.response))
 }
 
-const _post = (
+const _post = <T>(
   uri: string,
   payloads: unknown,
   config: IAxiosRequestConfig,
 ) => {
   return axios
     .post(uri, payloads, config)
-    .then(res => res.data)
+    .then<T>(res => res.data)
     .catch(error => Promise.reject(error.response))
 }
 
-const _delete = (uri: string, params: IFlatMap, config: IAxiosRequestConfig) => {
+const _delete = <T>(uri: string, params: IFlatMap, config: IAxiosRequestConfig) => {
   return axios
     .delete(joinQueryStringToUri(uri, params), config)
-    .then(res => res.data)
+    .then<T>(res => res.data)
     .catch(error => Promise.reject(error.response))
 }
 
-const _put = (uri: string, payloads: IFlatMap, config: IAxiosRequestConfig) => {
+const _put = <T>(uri: string, payloads: IFlatMap, config: IAxiosRequestConfig) => {
   return axios
     .put(uri, payloads, config)
-    .then(res => res.data)
+    .then<T>(res => res.data)
     .catch(error => Promise.reject(error.response))
 }
 
-const _patch = (
+const _patch = <T>(
   uri: string,
   payloads: unknown,
   config: IAxiosRequestConfig
 ) => {
   return axios
     .patch(uri, payloads, config)
-    .then(res => res.data)
+    .then<T>(res => res.data)
     .catch(error => error.response)
 }
 
